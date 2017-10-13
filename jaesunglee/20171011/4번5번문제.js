@@ -2,11 +2,12 @@
 
 function numPY(s) {
 
-  s = s ? s : '';
-  var regexpP = /p/gi;
-  var regexpY = /y/ig;
+    s = s ? s : '';
+    var regexpP = /p/gi;
+    var regexpY = /y/ig;
 
-  return ((s.match(regexpP) ? s.match(regexpP).length : 0) === (s.match(regexpY) ? s.match(regexpY).length : 0));
+    return ((s.match(regexpP) ?
+        s.match(regexpP).length : 0) === (s.match(regexpY) ? s.match(regexpY).length : 0));
 
 }
 
@@ -19,16 +20,22 @@ console.log(numPY());
 //5번문제
 
 function toWeirdCase(s) {
-  var str = s.split(" ");
-  var res = [];
-  for (var i = 0; i < str.length; i++) {
-    var arr = [];
-    for (var j = 0; j < str[i].split('').length; j++) {
-      (j % 2) ? arr.push(str[i].split('')[j]): arr.push(str[i].split('')[j].toUpperCase())
+    var str = s.split(' ');
+    var res = [];
+    for (var i = 0; i < str.length; i++) {
+        var arr = [];
+        for (var j = 0; j < str[i].split('').length; j++) {
+            if (j % 2) {
+                arr.push(str[i].split('')[j])
+            } else {
+                arr.push(str[i].split('')[j].toUpperCase())
+            }
+            // (j % 2) ? arr.push(str[i].split('')[j]): arr.push(str[i].split('')[j].toUpperCase())
+        }
+        res.push(arr.join(''));
     }
-    res.push(arr.join(''));
-  }
-  return res.join(' ');
+    console.log(res);
+    return res.join(' ');
 }
 console.log(toWeirdCase('hello world'));
 console.log(toWeirdCase('my name is lee'));
