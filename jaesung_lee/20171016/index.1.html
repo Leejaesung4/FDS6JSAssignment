@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hover effect</title>
+  <style>
+    input {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>더하기 결과 확인</h2>
+  <fieldset>
+    <label for="text_1"></label>
+    <input type="text" id="text_1">
+    <label for="text_2">+</label>
+    <input type="text" id="text_2">
+    <label for="text_3">=</label>
+    <input type="text" id="text_3">
+    <button type="button">확인</button>
+  </fieldset>
+  <script>
+    var btn = document.querySelector('button[type=button]');
+    btn.addEventListener('click', function() {
+      var text_1 = document.querySelector('input[id=text_1]').value * 1;
+      var text_2 = document.getElementById('text_2').value * 1;
+      var text_3 = document.getElementById('text_3').value * 1;
+      alert((text_1 + text_2) === text_3);
+    });
+  </script>
+</body>
+
+</html>
